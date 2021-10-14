@@ -1,3 +1,5 @@
-npm install
+run `npm install`
 
-npm start
+edit src/assets/settings.json to add apikey
+
+run `npm start`
