@@ -7,7 +7,6 @@ import prefix from 'superagent-prefix';
 import Config from './config';
 
 const app = express();
-const port = 3000;
 
 const settings: Config = require('./settings.json');
 
@@ -62,4 +61,4 @@ app.get('/breaches/:email',  (req, res) => {
 	getBreaches(email).then(breaches => { res.send(breaches); });
 });
 
-app.listen(port, () => { return; });
+app.listen(settings.port, () => { return; });
