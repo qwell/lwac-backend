@@ -2,6 +2,7 @@
 import express from 'express';
 import superagent from 'superagent';
 import prefix from 'superagent-prefix';
+import cors from 'cors';
 
 /* Import local classes */
 import Config from './config';
@@ -9,6 +10,8 @@ import Config from './config';
 const app = express();
 
 const settings: Config = require('./settings.json');
+
+app.use(cors());
 
 app.get('/', (req, res) => {
 	res.send('May I help you?');
