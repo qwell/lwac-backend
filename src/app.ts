@@ -36,9 +36,7 @@ function getBreaches(email: string) {
 app.get('/breaches',  (req, res) => {
 	switch (typeof req.query.email) {
 	case 'string':
-		getBreaches(req.query.email).then(breaches => {
-			res.send(breaches);
-		});
+		getBreaches(req.query.email).then(breaches => { res.send(breaches); });
 
 		break;
 	case 'object': /* Array of email is supported, but please don't actually do this. */
@@ -59,9 +57,7 @@ app.get('/breaches',  (req, res) => {
 });
 
 app.get('/breaches/:email',  (req, res) => {
-	const email: string = req.params.email;
-
-	getBreaches(email).then(breaches => { res.send(breaches); });
+	getBreaches(req.params.email).then(breaches => { res.send(breaches); });
 });
 
 app.listen(settings.port, () => { return; });
